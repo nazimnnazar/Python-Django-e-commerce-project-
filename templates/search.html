@@ -1,0 +1,158 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>limelight</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'na/css/bootstrap.min.css' %}">
+      <!-- style css -->
+      <link rel="stylesheet" href="{% static 'na/css/style.css' %}">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{% static 'na/css/responsive.css' %}">
+      <!-- fevicon -->
+      <link rel="icon" href="{% static 'na/images/fevicon.png' %}" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="{% static 'na/css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/{% static 'na/css/font-awesome.css' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+     <header>
+      <div class="container-fluid position-relative nav-bar p-0">
+         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+             <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+                 <a href="" class="navbar-brand">
+                     <h1 class="m-0 text-primary"><span class="text-dark">TRAVEL</span>ER</h1>
+                 </a>
+                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                     <span class="navbar-toggler-icon"></span>
+                 </button>
+                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                     <div class="navbar-nav ml-auto py-0">
+                         <a href="/" class="nav-item nav-link active">Home</a>
+                         <a href="about.html" class="nav-item nav-link">About</a>
+                         <a href="service.html" class="nav-item nav-link">Services</a>
+                         <a href="package.html" class="nav-item nav-link">Tour Packages</a>
+                         <div class="nav-item dropdown">
+                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                             <div class="dropdown-menu border-0 rounded-0 m-0">
+                                 <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                                 <a href="single.html" class="dropdown-item">Blog Detail</a>
+                                 <a href="destination.html" class="dropdown-item">Destination</a>
+                                 <a href="guide.html" class="dropdown-item">Travel Guides</a>
+                                 <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                             </div>
+                         </div>
+                         <a href="contact.html" class="nav-item nav-link">Contact</a>
+                     </div>
+                 </div>
+             </nav>
+         </div>
+     </div>
+     <!-- <div id="gallery"  class="gallery">
+        <div class="container">
+           <div class="row">
+              <div class="col-md-12">
+                 <div class="titlepage">
+                    <h1>Our <span class="green">Gadget</span></h1>
+                 </div>
+              </div>
+           </div>
+         </div>
+       </div>
+      <br><br> -->
+      <style>
+        h1 {
+          color: white;
+          text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        }
+        </style>
+        </head>
+        <body>
+        
+            <h1>Our <span class="green">Gadget</span></h1>
+        </body>
+        <br><br>
+     {% for i in pr %}
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+
+                       <a class="imgover" href="{{i.get_url}}"><img class="img-fluid" src="{{i.img.url}}" alt=""></a>
+
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{i.name}}</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i></small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>{{i.stock}}</small>
+                            </div>
+                            <!-- <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a> -->
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">{{i.price}}RS</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            {% endfor %}
+    
+            <!-- <div class="row">
+               <div class="col-md-4 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="{% static 'na/images/img9.jpg' %}" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="{% static 'na/images/img5.jpg' %}" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="{% static 'na/images/img7.jpg' %}" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="{% static 'na/images/img8.jpg' %}" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="{% static 'na/images/img1.jpg' %}" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="{% static 'na/images/img10.jpg' %}" alt="#"/></figure>
+                  </div>
+               </div>
+         -->
+      <script src="{% static 'na/js/jquery.min.js' %}"></script>
+      <script src="{% static 'na/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'na/js/jquery-3.0.0.min.js' %}"></script>
+      <!-- sidebar -->
+      <script src="{% static 'na/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+      <script src="{% static 'na/js/custom.js' %}"></script>
+   </body>
+</html>
+{% endblock %}

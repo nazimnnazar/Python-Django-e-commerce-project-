@@ -1,0 +1,287 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mkart </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'pa/img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/{% static 'pa/css/all.min.css' %}" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'pa/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'pa/lib/tempusdominus/' %}{% static 'pa/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'pa/css/style.css' %}" rel="stylesheet">
+    <title>Font Awesome Icons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    body 
+    * {
+      box-sizing: border-box;
+    }
+    form.example input[type=text] {
+      padding: 10px;
+      font-size: 17px;
+      border: 1px solid grey;
+      float: left;
+      width: 80%;
+      background: #f1f1f1;
+    }
+    
+    
+    
+    form.example button {
+      float: left;
+      width: 20%;
+      padding: 10px;
+      background: #44da64;
+      color: white;
+      font-size: 17px;
+      border: 1px solid grey;
+      border-left: none;
+      cursor: pointer;
+    }
+    form.example button:hover {
+      background: #0b7dda;
+    }
+    
+    form.example::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    </style>
+<body>
+
+    <!-- =================== --> 
+
+   <!-- ================== -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="m-0 text-primary"><span class="text-dark">MKAR</span>T</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="#" class="nav-item nav-link active">Home</a>
+                        <a href="{% url 'log_in' %}" class="nav-item nav-link">Login</a>
+                        <a href="{% url 'sign_in' %}" class="nav-item nav-link">Register</a>
+                        <a href="/" class="nav-item nav-link">Log Out</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu border-0 rounded-0 m-0">
+                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                                <a href="single.html" class="dropdown-item">Blog Detail</a>
+                                <a href="destination.html" class="dropdown-item">Destination</a>
+                                <a href="guide.html" class="dropdown-item">Travel Guides</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            </div>
+                        </div>
+                        <a href="{% url 'CartDetails' %}" class="nav-item nav-link">Cart</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="{% static 'pa/img/img5.jpg' %}" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-md-3">M & KART</h4>
+                            <h1 class="display-3 text-white mb-md-4">Let's Explor The World Best Gadgets</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="{% static 'pa/img/carousel-2.jpg' %}" alt="Image">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-prev-icon mb-n2"></span>
+                </div>
+            </a>
+            <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-next-icon mb-n2"></span>
+                </div>
+            </a>
+        </div>
+    </div>
+   <!-- ====================================================  -->
+   <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Collection</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="/">All Products</a>
+      {% for i in ct %}
+      <a href="{{i.get_url}}">{{i.name}}</a>
+      {% endfor %}
+    </div>
+  </div>
+   <!--====================================================================================================== -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Packages</h6>
+                <h>Pefect Mobile Packages</h1>
+            </div>
+<!-- 444444444444444444444444444444444444444444444444444444444 -->
+<form class="example" action="{% url 'search' %}" style="margin:auto;max-width:300px" method="get">
+    <input type="text" placeholder="Search.." name="q">
+    <button  type="submit"><i href="#" class="w3-margin-left fa fa-search"></i></button>
+    <!-- <button class="w3-btn w3-orange w3-xlarge"><i class="w3-margin-left fa fa-search"></i></button></p> -->
+  </form>
+<!-- 444444444444444444444444444444444444444444444444444444444 -->
+<style>
+    .dropbtn {
+      background-color: #3498DB;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dropbtn:hover, .dropbtn:focus {
+      background-color: #2980B9;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown a:hover {background-color: #ddd;}
+    
+    .show {display: block;}
+    </style>
+<!--===========================================================================================================================================-->
+
+   
+
+  <br><br><br>
+
+           {% for i in pr %}
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+
+                       <a class="imgover" href="{{i.get_url}}"><img class="img-fluid" src="{{i.img.url}}" alt=""></a>
+
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{i.name}}</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i></small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>{{i.stock}}</small>
+                            </div>
+                            <!-- <a class="h5 text-decoration-none" href="">Discover amazing places of the world with us</a> -->
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">{{i.price}}RS</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            {% endfor %}
+
+            <!-- -------------------------paginator---------------------------- 
+            <center> 
+            {% for i in pg.paginator.page_range %}
+            <a href="?page={{p}}" class="btn btn-sum btn-sm{% if pg.number == p %}active{% endif %}">{{p}}</a>
+            {% endfor %}
+            </center>  
+           -->
+             
+              
+    <!-- ======================== -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    
+
+
+    <!-- JavaScript Libraries -->
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/{% static 'pa/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'pa/lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'pa/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'pa/lib/tempusdominus/' %}{% static 'pa/js/moment.min.js' %}"></script>
+    <script src="{% static 'pa/lib/tempusdominus/' %}{% static 'pa/js/moment-timezone.min.js' %}"></script>
+    <script src="{% static 'pa/lib/tempusdominus/' %}{% static 'pa/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{% static 'pa/mail/jqBootstrapValidation.min.js' %}"></script>
+    <script src="{% static 'pa/mail/contact.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'pa/js/main.js' %}"></script>
+</body>
+
+</html>
+{% endblock %}
