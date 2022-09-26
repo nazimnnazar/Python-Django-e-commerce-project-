@@ -21,7 +21,7 @@ def Cart_Details(request,tot=0,count=0,cart_items=None):
 def c_id(request):
     ct_id=request.session.session_key
     if not ct_id:
-        ct_id=request.sesstion.create()
+        ct_id=request.session.create()
     return ct_id
     
 def add_cart(request,product_id):
