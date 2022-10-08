@@ -1,6 +1,15 @@
 # MKART
 MCART is an ecommerce website to provide customers can buy Modile,Laptop,Headphone.
 Implements the functioning of an E-commerce Website that performs various functions like sign up, logout, add to cart, products searching and much more.
+#Overview
+.Djagno Overview
+.Database Design and Models
+.Static Files
+.User Registration & Authenticaiton
+.Search
+.Pagination
+.Building an Django  Framework 
+.Python
 ![Screenshot (152)](https://user-images.githubusercontent.com/112808009/194699876-7d1eeb55-fc34-483e-9805-21264543f368.png)
 ![Screenshot (160)](https://user-images.githubusercontent.com/112808009/194699883-81cccb94-d4a9-4688-99d2-1283485f70fe.png)
 ![Screenshot (153)](https://user-images.githubusercontent.com/112808009/194699895-f1b03b75-938f-4453-b375-2423adcf0eb1.png)
