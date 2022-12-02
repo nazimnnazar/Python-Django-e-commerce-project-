@@ -3,6 +3,7 @@
 MKART is an ecommerce website to provide customers can buy Mobile,Laptop,Headphone.
 Implements the functioning of an E-commerce Website that performs various functions like sign up, logout, add to cart, products searching and much more.
 ## 🚀  Future Features
+
 - Register an new account, and log in as an existing user.
 - Only People with admin account can add other products.
 - Display products with details about them .
