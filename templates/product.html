@@ -205,8 +205,9 @@
 
   <br><br><br>
 
-           {% for i in pr %}
+         
             <div class="row">
+                  {% for i in pr %}
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="package-item bg-white mb-2">
 
@@ -228,19 +229,8 @@
                         </div>
                     </div>
                 </div>
+              {% endfor %}
             </div> 
-            {% endfor %}
-
-            <!-- -------------------------paginator---------------------------- 
-            <center> 
-            {% for i in pg.paginator.page_range %}
-            <a href="?page={{p}}" class="btn btn-sum btn-sm{% if pg.number == p %}active{% endif %}">{{p}}</a>
-            {% endfor %}
-            </center>  
-           -->
-             
-              
-    <!-- ======================== -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
     
 
